@@ -696,7 +696,7 @@ import {separateGraphs, applyPacking} from './handledisconnected'
                 let x = this._descent.x[0], y = this._descent.x[1];
                 this._nodes.forEach(function (v, i) { v.x = x[i], v.y = y[i]; });
                 var graphs = separateGraphs(this._nodes, this._links);
-                applyPacking(graphs, width, height, this._defaultNodeSize, 1, centerGraph);
+                applyPacking(graphs, width, height, this._defaultNodeSize, (height / width), centerGraph);
                 this._nodes.forEach((v, i) => {
                     this._descent.x[0][i] = v.x, this._descent.x[1][i] = v.y;
                     if (v.bounds) {
